@@ -14,6 +14,5 @@ async function bootstrap() {
       persistAuthorization: true,
     },
   });
-  await app.listen(7777);
 }
 bootstrap();
