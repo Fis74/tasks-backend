@@ -14,7 +14,6 @@ import { TasksEntity } from './tasks/entities/tasks.entity';
       password: process.env.PASSWORD,
       database: process.env.DB_NAME,
       entities: [TasksEntity],
-      synchronize: true,
       ssl: true,
     }),
   ],
