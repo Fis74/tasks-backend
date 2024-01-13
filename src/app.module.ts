@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { TasksEntity } from './tasks/entities/tasks.entity';
+import { TasksModule } from './tasks/tasks.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { TasksEntity } from './tasks/entities/tasks.entity';
       entities: [TasksEntity],
       ssl: true,
     }),
+    TasksModule,
   ],
   controllers: [],
   providers: [],
