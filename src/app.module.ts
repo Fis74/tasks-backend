@@ -9,7 +9,7 @@ import { TasksEntity } from './tasks/entities/tasks.entity';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.HOST,
-      port: parseInt(process.env.PORT),
+      port: parseInt(process.env.PORT_DB),
       username: process.env.USER,
       password: process.env.PASSWORD,
       database: process.env.DB_NAME,
