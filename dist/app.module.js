@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const config_1 = require("@nestjs/config");
 const tasks_entity_1 = require("./tasks/entities/tasks.entity");
+const tasks_module_1 = require("./tasks/tasks.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -21,14 +22,14 @@ exports.AppModule = AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
                 host: process.env.HOST,
-                port: parseInt(process.env.PORT),
+                port: parseInt(process.env.PORT_DB),
                 username: process.env.USER,
                 password: process.env.PASSWORD,
                 database: process.env.DB_NAME,
                 entities: [tasks_entity_1.TasksEntity],
-                synchronize: true,
                 ssl: true,
             }),
+            tasks_module_1.TasksModule,
         ],
         controllers: [],
         providers: [],

@@ -45,7 +45,7 @@ export class TasksService {
 
   async update(id: number, dto: UpdateTaskDto) {
     await this.findById(id);
-    await this.repository.update(id, dto);
+    await this.repository.update(id, { ...dto, updatedAt: new Date() });
     const taskUpdated = await this.findById(id);
     return taskUpdated;
   }
